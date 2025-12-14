@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>متجر لبناني - تسوق إلكتروني</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-shopping-bag"></i>
+                <span>المتجر اللبناني</span>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="active">الرئيسية</a></li>
+                <li><a href="#products">المنتجات</a></li>
+                <li><a href="#categories">الفئات</a></li>
+                <li><a href="#contact-info">تواصل معنا</a></li>
+                <li><a href="#about">عن المتجر</a></li>
+            </ul>
+            
+            <div class="header-actions">
+                <div class="cart-icon" id="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>تسوق من لبنان إلى منزلك</h1>
+            <p>اكتشف أفضل المنتجات اللبنانية الأصلية بأفضل الأسعار. نوفر لك تجربة تسوق آمنة وسهلة مع توصيل سريع إلى جميع أنحاء لبنان.</p>
+            <a href="#products" class="cta-button">تسوق الآن</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="container">
+        <h2 class="section-title">منتجاتنا المميزة</h2>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">الكل</button>
+            <button class="filter-btn" data-filter="food">أطعمة لبنانية</button>
+            <button class="filter-btn" data-filter="handicrafts">حرف يدوية</button>
+            <button class="filter-btn" data-filter="home">منتجات منزلية</button>
+            <button class="filter-btn" data-filter="beauty">الجمال والعناية</button>
+        </div>
+        
+        <div class="products-grid" id="products-grid">
+            <!-- المنتجات سيتم إضافتها بواسطة JavaScript -->
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info" id="contact-info">
+        <div class="container">
+            <h2 class="section-title">تواصل معنا</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>موقعنا</h3>
+                    <p>لبنان - بيروت</p>
+                    <p>نقدم التوصيل لجميع أنحاء لبنان</p>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>اتصل بنا</h3>
+                    <p>هاتف: <a href="tel:+963991873105">+963 991 873 105</a></p>
+                    <p>ساعات العمل: 9 صباحاً - 6 مساءً</p>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>البريد الإلكتروني</h3>
+                    <p><a href="mailto:ibrahemalaaibrahem156@gmail.com">ibrahemalaaibrahem156@gmail.com</a></p>
+                    <p>نتطلع لاستفساراتكم واقتراحاتكم</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>عربة التسوق</h3>
+            <button class="close-cart" id="close-cart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="cart-items" id="cart-items">
+            <!-- عناصر عربة التسوق ستتم إضافتها بواسطة JavaScript -->
+        </div>
+        
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>الإجمالي:</span>
+                <span id="cart-total-price">0 ل.ل</span>
+            </div>
+            <button class="checkout-btn" id="checkout-btn">إتمام الشراء</button>
+        </div>
+    </div>
+
+    <!-- Product Modal -->
+    <div class="product-modal" id="product-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>تفاصيل المنتج</h3>
+                <button class="close-modal" id="close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- محتوى المنتج سيتم إضافته بواسطة JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notification-text"></span>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>المتجر اللبناني</h4>
+                    <p>متجرنا يهدف إلى توفير أفضل المنتجات اللبنانية الأصيلة مع ضمان الجودة والاستمرارية في الخدمة.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-left"></i> الرئيسية</a></li>
+                        <li><a href="#products"><i class="fas fa-chevron-left"></i> المنتجات</a></li>
+                        <li><a href="#categories"><i class="fas fa-chevron-left"></i> الفئات</a></li>
+                        <li><a href="#contact-info"><i class="fas fa-chevron-left"></i> تواصل معنا</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> سياسة الإرجاع</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>خدماتنا</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> الشحن والتوصيل</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> الأسئلة الشائعة</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> الدعم الفني</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> الخصوصية</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-left"></i> الشروط والأحكام</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>معلومات التواصل</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> لبنان - بيروت</a></li>
+                        <li><a href="tel:+963991873105"><i class="fas fa-phone"></i> +963 991 873 105</a></li>
+                        <li><a href="mailto:ibrahemalaaibrahem156@gmail.com"><i class="fas fa-envelope"></i> ibrahemalaaibrahem156@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> 9 صباحاً - 6 مساءً</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; ibrahemalaaibrahem156@gmail.com</p
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const products = [
+            {
+                id: 1,
+                name: "زيت زيتون لبناني أصلي",
+                category: "food",
+                price: 85000,
+                image: "https://images.unsplash.com/photo-1533050487297-09b450131914?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                description: "زيت زيتون لبناني أصلي عالي الجودة، معصور على البارد، من أشجار زيتون معمرة في الجنوب اللبناني.",
+                details: ["سعة 1 لتر", "معصور على البارد", "نقي 100%", "عبوة زجاجية", "صلاحية سنة واحدة"]
+            },
+            {
+                id: 2,
+                name: "مربى التين اللبناني",
+                category: "food",
+                price: 45000,
+                image: "https://images.unsplash.com/photo-1476124369491-e7addf5db371?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                description: "مربى التين اللبناني المصنوع يدوياً من تين طازج وسكر طبيعي، بدون مواد حافظة.",
+                details: ["سعة 500 غرام", "منتوج طبيعي 100%", "بدون مواد حافظة", "عبوة زجاجية", "صنع لبناني أصيل"]
+            },
+            {
+                id: 3,
+                name: "سجاد لبناني تقليدي",
+                category: "handicrafts",
+                price: 325000,
+                image: "https://images.unsplash.com/photo-1594040226859-24ad0c9d2c8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                description: "سجاد لبناني تقليدي منسوج يدوياً من قبل حرفيين لبنانيين، بألوان وأنماط مميزة.",
+                details: ["مقاس 120x180 سم", "منسوج يدوياً", "صوف طبيعي", "ألوان ثابتة", "صنع لبناني تقليدي"]
+            },
+            {
+                id: 4,
+                name: "فخاريات لبنانية",
+                category: "home",
+                price: 75000,
+                image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                description: "مجموعة فخاريات لبنانية تقليدية مصنوعة يدوياً، مثالية لتزيين المنزل أو تقديم الطعام.",
+                details: ["5 قطع متكاملة", "صنع يدوي", "آمنة للأطعمة", "قابلة للغسيل", "تصميم لبناني تقليدي"]
+            },
+            {
+                id: 5,
+                name: "صابون غار لبناني",
+                category: "beauty",
+                price: 35000,
+                image: "https://images.unsplash.com/photo-1594736797933-d1dec7d0c4b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                description: "صابون الغار اللبناني الطبيعي المصنوع من زيت الزيتون وزيت الغار، مفيد للبشرة والشعر.",
+                details: ["150 غرام", "طبيعي 100%", "مناسب لجميع أنواع البشرة", "صنع تقليدي", "بدون مواد كيميائية"]
+            },
+            {
+                id: 6,
+                name: "قهوة لبنانية محمصة",
+                category: "food",
+                price: 65000,
+                image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                description: "قهوة لبنانية عربية محمصة حديثاً، بنكهة غنية ورائحة فواحة، من أفضل أنواع البن.",
+                details: ["سعة 500 غرام", "محمصة حديثاً", "نكهة غنية", "طحن حسب الطلب", "من أجود الأنواع"]
+            },
+            {
+                id: 7,
+                name: "حقائب يد لبنانية",
+                category: "handicrafts",
+                price: 185000,
+                image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                description: "حقائب يد لبنانية مصنوعة يدوياً من الجلد الطبيعي، بتصاميم عصرية وأنيقة.",
+                details: ["جلد طبيعي", "صنع يدوي", "متعددة الألوان", "مقاسات مختلفة", "تصميم لبناني عصري"]
+            },
+            {
+                id: 8,
+                name: "مجوهرات لبنانية فضية",
+                category: "handicrafts",
+                price: 275000,
+                image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                description: "مجوهرات لبنانية فضية من تصميم حرفيين لبنانيين، بتصاميم فريدة تجمع بين الأصالة والحداثة.",
+                details: ["فضة عيار 925", "صنع يدوي", "تصميم لبناني فريد", "متعددة القطع", "علبة هدية مميزة"]
+            }
+        ];
+
+        // متغيرات DOM
+        const productsGrid = document.getElementById('products-grid');
+        const cartIcon = document.getElementById('cart-icon');
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const closeCart = document.getElementById('close-cart');
+        const cartItems = document.getElementById('cart-items');
+        const cartCount = document.querySelector('.cart-count');
+        const cartTotalPrice = document.getElementById('cart-total-price');
+        const checkoutBtn = document.getElementById('checkout-btn');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const productModal = document.getElementById('product-modal');
+        const closeModal = document.getElementById('close-modal');
+        const modalBody = document.getElementById('modal-body');
+        const overlay = document.getElementById('overlay');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        const notification = document.getElementById('notification');
+        const notificationText = document.getElementById('notification-text');
+
+        // عربة التسوق
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // تهيئة الصفحة
+        document.addEventListener('DOMContentLoaded', () => {
+            displayProducts(products);
+            updateCart();
+            
+            // إضافة مستمعي الأحداث
+            cartIcon.addEventListener('click', openCart);
+            closeCart.addEventListener('click', closeCartSidebar);
+            closeModal.addEventListener('click', closeProductModal);
+            overlay.addEventListener('click', () => {
+                closeCartSidebar();
+                closeProductModal();
+                closeMobileMenu();
+            });
+            
+            checkoutBtn.addEventListener('click', checkout);
+            
+            // فلترة المنتجات
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // إزالة النشاط من جميع الأزرار
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // إضافة النشاط للزر المحدد
+                    button.classList.add('active');
+                    
+                    const filter = button.getAttribute('data-filter');
+                    filterProducts(filter);
+                });
+            });
+            
+            // قائمة الجوال
+            mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+            
+            // إغلاق القائمة عند النقر على رابط
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    closeMobileMenu();
+                });
+            });
+        });
+
+        // عرض المنتجات
+        function displayProducts(productsArray) {
+            productsGrid.innerHTML = '';
+            
+            if (productsArray.length === 0) {
+                productsGrid.innerHTML = '<p style="text-align: center; grid-column: 1/-1; color: var(--gray-color); font-size: 1.2rem;">لا توجد منتجات في هذه الفئة</p>';
+                return;
+            }
+            
+            productsArray.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.setAttribute('data-category', product.category);
+                
+                productCard.innerHTML = `
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
+                        <div class="product-badge">${getCategoryName(product.category)}</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">
+                            <i class="fas fa-tag"></i>
+                            ${getCategoryName(product.category)}
+                        </div>
+                        <h3 class="product-title">${product.name}</h3>
+                        <p class="product-description">${product.description}</p>
+                        <div class="product-price">${formatPrice(product.price)} ل.ل</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart" data-id="${product.id}">أضف إلى العربة</button>
+                            <a href="#" class="view-details" data-id="${product.id}">تفاصيل</a>
+                        </div>
+                    </div>
+                `;
+                
+                productsGrid.appendChild(productCard);
+            });
+            
+            // إضافة مستمعي الأحداث للمنتجات
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const productId = parseInt(e.target.getAttribute('data-id'));
+                    addToCart(productId);
+                });
+            });
+            
+            document.querySelectorAll('.view-details').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const productId = parseInt(e.target.getAttribute('data-id'));
+                    showProductDetails(productId);
+                });
+            });
+        }
+
+        // تنسيق السعر
+        function formatPrice(price) {
+            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        // تصفية المنتجات
+        function filterProducts(category) {
+            if (category === 'all') {
+                displayProducts(products);
+                return;
+            }
+            
+            const filteredProducts = products.filter(product => product.category === category);
+            displayProducts(filteredProducts);
+        }
+
+        // الحصول على اسم الفئة
+        function getCategoryName(category) {
+            const categories = {
+                'food': 'أطعمة لبنانية',
+                'handicrafts': 'حرف يدوية',
+                'home': 'منتجات منزلية',
+                'beauty': 'الجمال والعناية'
+            };
+            
+            return categories[category] || category;
+        }
+
+        // إضافة منتج إلى عربة التسوق
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            
+            if (!product) return;
+            
+            // التحقق إذا كان المنتج موجوداً بالفعل في العربة
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    ...product,
+                    quantity: 1
+                });
+            }
+            
+            updateCart();
+            saveCartToLocalStorage();
+            
+            // إشعار
+            showNotification(`تم إضافة ${product.name} إلى العربة`);
+        }
+
+        // تحديث عربة التسوق
+        function updateCart() {
+            // تحديث عدد العناصر
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            
+            // تحديث محتوى العربة
+            renderCartItems();
+            
+            // تحديث السعر الإجمالي
+            updateCartTotal();
+        }
+
+        // عرض عناصر عربة التسوق
+        function renderCartItems() {
+            cartItems.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="cart-empty">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h3>عربة التسوق فارغة</h3>
+                        <p>أضف بعض المنتجات لبدء التسوق</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            cart.forEach(item => {
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <div class="cart-item-image">
+                        <img src="${item.image}" alt="${item.name}">
+                    </div>
+                    <div class="cart-item-details">
+                        <div class="cart-item-title">${item.name}</div>
+                        <div class="cart-item-price">${formatPrice(item.price)} ل.ل</div>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn decrease" data-id="${item.id}">-</button>
+                            <span class="quantity">${item.quantity}</span>
+                            <button class="quantity-btn increase" data-id="${item.id}">+</button>
+                        </div>
+                        <button class="remove-item" data-id="${item.id}">إزالة</button>
+                    </div>
+                `;
+                
+                cartItems.appendChild(cartItem);
+            });
+            
+            // إضافة مستمعي الأحداث للعناصر في العربة
+            document.querySelectorAll('.decrease').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const productId = parseInt(e.target.getAttribute('data-id'));
+                    decreaseQuantity(productId);
+                });
+            });
+            
+            document.querySelectorAll('.increase').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const productId = parseInt(e.target.getAttribute('data-id'));
+                    increaseQuantity(productId);
+                });
+            });
+            
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const productId = parseInt(e.target.getAttribute('data-id'));
+                    removeFromCart(productId);
+                });
+            });
+        }
+
+        // تحديث السعر الإجمالي
+        function updateCartTotal() {
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            cartTotalPrice.textContent = `${formatPrice(total)} ل.ل`;
+        }
+
+        // زيادة كمية المنتج
+        function increaseQuantity(productId) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity += 1;
+                updateCart();
+                saveCartToLocalStorage();
+            }
+        }
+
+        // تقليل كمية المنتج
+        function decreaseQuantity(productId) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                if (item.quantity > 1) {
+                    item.quantity -= 1;
+                } else {
+                    removeFromCart(productId);
+                    return;
+                }
+                updateCart();
+                saveCartToLocalStorage();
+            }
+        }
+
+        // إزالة المنتج من العربة
+        function removeFromCart(productId) {
+            const product = cart.find(item => item.id === productId);
+            cart = cart.filter(item => item.id !== productId);
+            updateCart();
+            saveCartToLocalStorage();
+            
+            // إشعار
+            if (product) {
+                showNotification(`تم إزالة ${product.name} من العربة`);
+            }
+        }
+
+        // حفظ العربة في التخزين المحلي
+        function saveCartToLocalStorage() {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        // فتح عربة التسوق
+        function openCart() {
+            cartSidebar.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            closeMobileMenu();
+        }
+
+        // إغلاق عربة التسوق
+        function closeCartSidebar() {
+            cartSidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // عرض تفاصيل المنتج
+        function showProductDetails(productId) {
+            const product = products.find(p => p.id === productId);
+            
+            if (!product) return;
+            
+            modalBody.innerHTML = `
+                <div class="modal-image">
+                    <img src="${product.image}" alt="${product.name}">
+                </div>
+                <div class="modal-info">
+                    <h3 class="modal-product-title">${product.name}</h3>
+                    <div class="modal-product-price">${formatPrice(product.price)} ل.ل</div>
+                    <p class="modal-product-description">${product.description}</p>
+                    
+                    <div class="modal-product-details">
+                        <h4>تفاصيل المنتج:</h4>
+                        <ul>
+                            ${product.details.map(detail => `<li>${detail}</li>`).join('')}
+                        </ul>
+                    </div>
+                    
+                    <div class="modal-actions">
+                        <button class="cta-button add-to-cart-modal" data-id="${product.id}">أضف إلى العربة</button>
+                        <button class="cta-button secondary" id="close-modal-btn">إغلاق</button>
+                    </div>
+                </div>
+            `;
+            
+            productModal.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            closeMobileMenu();
+            
+            // إضافة مستمعي الأحداث للأزرار في المودال
+            document.querySelector('.add-to-cart-modal').addEventListener('click', () => {
+                addToCart(productId);
+                closeProductModal();
+            });
+            
+            document.getElementById('close-modal-btn').addEventListener('click', closeProductModal);
+        }
+
+        // إغلاق نافذة المنتج
+        function closeProductModal() {
+            productModal.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // إكمال عملية الشراء (وهمي)
+        function checkout() {
+            if (cart.length === 0) {
+                showNotification('عربة التسوق فارغة. أضف منتجات قبل إتمام الشراء.');
+                return;
+            }
+            
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            
+            // عرض رسالة تأكيد
+            const confirmMessage = `شكراً لشرائك! إجمالي طلبك: ${formatPrice(total)} ل.ل\n\nسيتم التواصل معك على الرقم +963 991 873 105 لتأكيد الطلب وتفاصيل التوصيل.\n\nهل تريد إتمام عملية الشراء؟`;
+            
+            if (confirm(confirmMessage)) {
+                // تفريغ العربة
+                cart = [];
+                updateCart();
+                saveCartToLocalStorage();
+                closeCartSidebar();
+                
+                showNotification('تم تأكيد طلبك بنجاح! سنتواصل معك قريباً.');
+                
+                // إرسال إشعار وهمي بالطلب
+                setTimeout(() => {
+                    alert(`تم إرسال تفاصيل طلبك إلى البريد: ibrahemalaaibrahem156@gmail.com\nسيتم التواصل معك على الرقم +963 991 873 105 لتأكيد موعد التوصيل.`);
+                }, 500);
+            }
+        }
+
+        // عرض إشعار
+        function showNotification(message) {
+            notificationText.textContent = message;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        // تبديل قائمة الجوال
+        function toggleMobileMenu() {
+            navLinks.classList.toggle('active');
+            overlay.classList.toggle('active');
+            
+            if (navLinks.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // إغلاق قائمة الجوال
+        function closeMobileMenu() {
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // تنشيط الروابط عند التمرير
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
