@@ -63,4 +63,4 @@ The project demonstrates my understanding of web development fundamentals, user 
 ---
 
 ## 📎 Notes
-This project was developed independently as part of my preparation for applying to the **Russian Government Scholarship**, demonstrating my motivation and practical skills in software engineering.
+This project was developed independently as part of my preparation for  to the to get into software engineering , demonstrating my motivation and practical skills in software engineering.
